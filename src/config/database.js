@@ -3,7 +3,7 @@ module.exports = {
   host: 'localhost',
   username: 'postgres',
   password: 'docker',
-  database: 'gympoint',
+  database: 'firecamp',
   define: {
     timestamp: true, // created_at & updated_at
     underscored: true,

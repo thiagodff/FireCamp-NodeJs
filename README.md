@@ -6,7 +6,7 @@ Fixar erros de padrões de código:
 
 ## Docker
 
-`sudo docker run --name databaseGYM -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
+`sudo docker run --name databaseCAMP -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 
 ### Principais comandos:
 
@@ -14,11 +14,11 @@ Fixar erros de padrões de código:
 
 `sudo docker ps -a`
 
-`sudo docker start databaseGYM`
+`sudo docker start databaseCAMP`
 
-`sudo docker logs databaseGYM`
+`sudo docker logs databaseCAMP`
 
-## Sequelize
+## Sequelize-cli
 
 ### Migrations
 
@@ -27,3 +27,9 @@ Fixar erros de padrões de código:
 `yarn sequelize db:migrate`
 
 `yarn sequelize db:migrate:undo or :undo:all`
+
+### Seeds
+
+`yarn sequelize seed:generate --name admin-user`
+
+`yarn sequelize db:seed:all`
