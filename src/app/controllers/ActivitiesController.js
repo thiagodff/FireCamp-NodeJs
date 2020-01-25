@@ -1,6 +1,24 @@
+import Activities from '../models/Activities';
+import File from '../models/File';
+
 class ActivitiesController {
   async index(req, res) {
-    return res.json({ ok: 'true' });
+    const activities = await Activities.findAll({
+      attributes: [
+        'id',
+        'banner_id',
+        'user_id',
+        'title',
+        'description',
+        'location',
+        'date',
+      ],
+      include: [
+        { model: File, as: 'banner', attributes: ['name', 'path', 'url'] },
+      ],
+    });
+
+    return res.json(activities);
   }
 }
 
