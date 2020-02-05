@@ -7,6 +7,8 @@ class User extends Model {
       {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
+        age: Sequelize.INTEGER,
+        plan: Sequelize.INTEGER,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
         instructor: Sequelize.BOOLEAN,
@@ -24,6 +26,10 @@ class User extends Model {
     });
 
     return this;
+  }
+
+  static associate(models) {
+    this.belongsTo(models.Plans, { foreignKey: 'plan', as: 'activity_plan' });
   }
 
   checkPassword(password) {

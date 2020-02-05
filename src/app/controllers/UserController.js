@@ -24,7 +24,7 @@ class UserController {
       return res.status(400).json({ error: 'User already exists.' });
     }
 
-    const { id, name, email, instructor, enrollment } = await User.create(
+    const { id, name, email, age, instructor, enrollment } = await User.create(
       req.body
     );
 
@@ -32,6 +32,7 @@ class UserController {
       id,
       name,
       email,
+      age,
       instructor,
       enrollment,
     });
@@ -72,15 +73,55 @@ class UserController {
       return res.status(401).json({ error: 'Password does not match.' });
     }
 
-    const { id, name, instructor, enrollment } = await user.update(req.body);
+    const { id, name, age, plan, instructor, enrollment } = await user.update(
+      req.body
+    );
 
     return res.json({
       id,
       name,
       email,
+      age,
+      plan,
       instructor,
       enrollment,
     });
+  }
+
+  async index(req, res) {
+    const campers = await User.findAll({
+      attributes: ['id', 'name', 'email', 'age', 'enrollment', 'plan'],
+      where: {
+        instructor: false,
+      },
+    });
+
+    return res.json(campers);
+  }
+
+  async delete(req, res) {
+    const { id } = req.params;
+
+    const isAdmin = await User.findByPk(req.userId);
+
+    if (isAdmin.email !== 'admin@firecamp.com') {
+      return res.status(401).json({ error: 'Only admin can delete camper' });
+    }
+
+    const camper = await User.findOne({
+      where: {
+        id,
+        instructor: false,
+      },
+    });
+
+    if (!camper) {
+      return res.status(401).json({ error: 'Only campers can be deleted' });
+    }
+
+    await camper.destroy();
+
+    return res.json(camper);
   }
 }
 
