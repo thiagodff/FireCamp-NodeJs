@@ -4,7 +4,8 @@ import { Op } from 'sequelize';
 import Plans from '../models/Plans';
 import User from '../models/User';
 
-import Mail from '../../lib/Mail';
+import EnrollmentMail from '../jobs/EnrollmentMail';
+import Queue from '../../lib/Queue';
 
 class EnrolmentsController {
   async index(req, res) {
@@ -29,7 +30,6 @@ class EnrolmentsController {
 
   async update(req, res) {
     const schema = Yup.object().shape({
-      enrollment: Yup.date().required(),
       plan: Yup.number().required(),
       camper_id: Yup.string().required(),
     });
@@ -46,24 +46,22 @@ class EnrolmentsController {
         .json({ error: 'Only the admin can enroll campers' });
     }
 
-    const { camper_id, plan, enrollment } = req.body;
+    const { camper_id, plan } = req.body;
 
     const camper = await User.findByPk(camper_id);
 
-    const { id, name, email, age } = await camper.update({
+    const date = new Date();
+
+    const { id, name, email, age, enrollment } = await camper.update({
       plan,
-      enrollment,
+      enrollment: date,
     });
 
     const camperPlan = await Plans.findByPk(plan);
 
-    await Mail.sendMail({
-      to: `${camper.name} <${camper.email}>`,
-      subject: `Matricula realizada com sucesso`,
-      text: `Matriculado no plano ${camperPlan.title} com direito à ${camperPlan.max_activities} atividades`,
-    });
+    await Queue.add(EnrollmentMail.key, { camper, camperPlan, date });
 
-    return res.json({ id, name, email, age, plan });
+    return res.json({ id, name, email, age, plan, enrollment });
   }
 
   async delete(req, res) {
