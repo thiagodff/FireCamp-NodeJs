@@ -1,10 +1,10 @@
 export default {
-  host: 'smtp.mailtrap.io',
-  port: 2525,
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   secure: false, // ex: SSL
   auth: {
-    user: '1871d02c4b0c2b',
-    pass: '116e60291404ab',
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
   default: {
     from: 'Equipe Firecamp <noreplay@firecamp.com',
