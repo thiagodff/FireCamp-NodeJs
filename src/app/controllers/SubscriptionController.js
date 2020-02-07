@@ -27,7 +27,14 @@ class SubscriptionController {
               [Op.between]: [startOfDay(parsedDate), endOfDay(parsedDate)],
             },
           },
-          attributes: ['title', 'description', 'location', 'date'],
+          attributes: [
+            'title',
+            'description',
+            'location',
+            'date',
+            'past',
+            'cancelable',
+          ],
           order: ['date'],
           include: [
             {

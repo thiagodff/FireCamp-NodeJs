@@ -15,6 +15,8 @@ class InstructorActivitiesController {
         'description',
         'location',
         'date',
+        'past',
+        'cancelable',
       ],
       where: {
         user_id: req.userId,

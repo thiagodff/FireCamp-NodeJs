@@ -20,6 +20,8 @@ class ActivitiesController {
         'description',
         'location',
         'date',
+        'past',
+        'cancelable',
       ],
       where: {
         date: {

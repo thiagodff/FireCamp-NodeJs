@@ -39,3 +39,8 @@ Fixar erros de padrões de código:
 ## Background jobs com Redis
 
 `sudo docker run --name redisCAMP -p 6379:6379 -d -t redis:alpine`
+
+## Tratativa de erros com Sentry
+
+Monitoramento de erros da aplicação utilizando o Sentry, pode ser integrado com Slack,
+github(abre issues automaticamente).
