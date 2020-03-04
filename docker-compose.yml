@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  firecamp-api:
+    container_name: firecamp-api
+    build: '.'
+    volumes:
+      - .:/home/node/api
+      - /home/node/api/node_modules
+    ports:
+      - '3333:3333'
+    depends_on:
+      - firecamp-database
+      - firecamp-redis
+    environment:
+      - DB_HOST=firecamp-database
+      - REDIS_HOST=firecamp-redis
+    networks:
+      - firecamp-network
+
+  firecamp-redis:
+    image: redis:alpine
+    container_name: firecamp-redis
+    volumes:
+      - redis-firecamp-data:/data
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '6379:6379'
+    networks:
+      - firecamp-network
+
+  firecamp-jobs:
+    container_name: firecamp-jobs
+    build: .
+    command: yarn queue
+    depends_on:
+      - firecamp-api
+      - firecamp-database
+      - firecamp-redis
+    environment:
+      - DB_HOST=firecamp-database
+      - REDIS_HOST=firecamp-redis
+    networks:
+      - firecamp-network
+
+  firecamp-database:
+    image: postgres
+    container_name: firecamp-database
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+    ports:
+      - '5432:5432'
+    networks:
+      - firecamp-network
+
+volumes:
+  postgres-firecamp-data:
+  redis-firecamp-data:
+
+networks:
+  firecamp-network:
+    driver: bridge

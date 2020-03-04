@@ -10,7 +10,7 @@ class SessionController {
       email: Yup.string()
         .email()
         .required(),
-      password: Yup.string().required(),
+      password: Yup.string(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -29,12 +29,11 @@ class SessionController {
       return res.status(401).json({ error: 'Password does not match' });
     }
 
-    const { id, name } = user;
-
     return res.json({
       user: {
         id,
         name,
+        instructor,
         email,
       },
       token: jwt.sign({ id }, authConfig.secret, {

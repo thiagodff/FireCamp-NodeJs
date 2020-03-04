@@ -11,7 +11,7 @@ class EnrollmentMail {
   async handle({ data }) {
     const { camper, camperPlan, date } = data;
 
-    await Mail.senddMail({
+    await Mail.sendMail({
       to: `${camper.name} <${camper.email}>`,
       subject: `Matricula realizada com sucesso`,
       template: 'cancellation',
