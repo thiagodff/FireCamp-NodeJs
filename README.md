@@ -9,7 +9,7 @@ FireCamp
 <p align="center">A Software as a Service for campers to subscribe for activities</p>
 
 <p align="center">
-  [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FireCamp&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fthiagodff%2FFireCamp-NodeJs%2Fmaster%2F.github%2FInsomnia_firecamp.json)
+  <a href="https://insomnia.rest/run/?label=FireCamp&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fthiagodff%2FFireCamp-NodeJs%2Fmaster%2F.github%2FInsomnia_firecamp.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
   </a>
