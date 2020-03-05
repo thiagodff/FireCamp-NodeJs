@@ -54,7 +54,8 @@ This app features all the latest tools and practices development!
 
 1. Clone this repo using `git clone https://github.com/thiagodff/FireCamp-NodeJs`
 2. Move yourself to the appropriate directory: `cd FireCamp-NodeJs`<br>
-3. Run `docker-compose up` to setup all your database and start services<br>
+3. Copy the .env.example `cp .env.example .env` and set the environment variables if you prefer
+4. Run `docker-compose up` to setup all your database and start services(Be sure to have docker and docker-compose installed)<br>
 
 ## Status Codes
 
