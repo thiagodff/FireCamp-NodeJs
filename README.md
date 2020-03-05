@@ -14,8 +14,6 @@ FireCamp
   </a>
 </p>
 
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FireCamp%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fthiagodff%2FFireCamp-NodeJs%2Fmaster%2F.github%2FInsomnia_firecamp.json)
-
 ## About the project
 
 Rest API of the **FireCamp System**.<br>
@@ -56,6 +54,10 @@ This app features all the latest tools and practices development!
 2. Move yourself to the appropriate directory: `cd FireCamp-NodeJs`<br>
 3. Copy the .env.example `cp .env.example .env` and set the environment variables if you prefer
 4. Run `docker-compose up` to setup all your database and start services(Be sure to have docker and docker-compose installed)<br>
+
+## Routes
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FireCamp%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fthiagodff%2FFireCamp-NodeJs%2Fmaster%2F.github%2FInsomnia_firecamp.json)
 
 ## Status Codes
 
