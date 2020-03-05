@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="./.github/logo22.svg" alt="FireCamp" width="160">
+  <img src="./.github/logo22.svg" alt="FireCamp" width="190">
 <br>
 <br>
 FireCamp
@@ -9,10 +9,22 @@ FireCamp
 <p align="center">A Software as a Service for campers to subscribe for activities</p>
 
 <p align="center">
+  [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FireCamp&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fthiagodff%2FFireCamp-NodeJs%2Fmaster%2F.github%2FInsomnia_firecamp.json)
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
   </a>
 </p>
+
+## About the project
+
+Rest API of the **FireCamp System**.<br/>
+As a instructor, you're able to create and edit activities.
+<br>
+As a camper, you're able to do subscribe in activities.
+
+To see the **camper interface**, click here to take a look in the mobile aplicattion: [FireCamp Mobile](https://github.com/thiagodff/FireCamp-ReactJs)
+<br>
+To see the **instructor interface**, click here to take a look in the web aplicattion: [FireCamp Web](https://github.com/thiagodff/FireCamp-ReactNative)
 
 ## Features
 
@@ -39,10 +51,37 @@ This app features all the latest tools and practices development!
 
 ## Getting started
 
-1. Clone this repo using `git clone https://github.com/thiagodff/FireCamp-nodejs`
-2. Move yourself to the appropriate directory: `cd FireCamp-nodejs`<br />
+1. Clone this repo using `git clone https://github.com/thiagodff/FireCamp-NodeJs`
+2. Move yourself to the appropriate directory: `cd FireCamp-NodeJs`<br />
 3. Run `docker-compose up` to setup all your database and start services<br />
+
+## Status Codes
+
+FireCamp returns the following status codes in its API:
+
+| Status Code | Description             |
+| :---------- | :---------------------- |
+| 200         | `OK`                    |
+| 400         | `BAD REQUEST`           |
+| 401         | `UNAUTHORIZED`          |
+| 404         | `NOT FOUND`             |
+| 500         | `INTERNAL SERVER ERROR` |
+
+## Future
+
+Create an administrative controller web page, be able to create and edit new plans for campers and enroll them.<br/>
+Create a mobile app for instructors.<br/>
+Show the current plan of the camper in your app.
+
+- [x] Modify api
+- [ ] Admin page
+- [ ] Instructor app
+- [ ] Modify camper app
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
+
+---
+
+Made with ♥ by Thiago :wave: [See my linkedin!](https://www.linkedin.com/in/thiago-fernandes-dornelles/)
