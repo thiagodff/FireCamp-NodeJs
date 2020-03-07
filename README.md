@@ -21,9 +21,9 @@ As a instructor, you're able to create and edit activities.
 <br>
 As a camper, you're able to do subscribe in activities.
 
-To see the **camper interface**, click here to take a look in the mobile aplicattion: [FireCamp Mobile](https://github.com/thiagodff/FireCamp-ReactJs)
+To see the **camper interface**, click here to take a look in the mobile aplicattion: [FireCamp Mobile](https://github.com/thiagodff/FireCamp-ReactNative)
 <br>
-To see the **instructor interface**, click here to take a look in the web aplicattion: [FireCamp Web](https://github.com/thiagodff/FireCamp-ReactNative)
+To see the **instructor interface**, click here to take a look in the web aplicattion: [FireCamp Web](https://github.com/thiagodff/FireCamp-ReactJs)
 
 ## Features
 
