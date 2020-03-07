@@ -42,7 +42,7 @@ This app features all the latest tools and practices development!
 - [Bcrypt](https://www.npmjs.com/package/bcrypt)
 - [Youch](https://www.npmjs.com/package/youch)
 - [Yup](https://www.npmjs.com/package/yup)
-- [Bee Queue](https://www.npmjs.com/package/bcrypt)
+- [Bee Queue](https://github.com/bee-queue/bee-queue)
 - [Nodemailer](https://nodemailer.com/about/)
 - [Date-fns](https://date-fns.org/)
 - [Sentry](https://sentry.io/)
