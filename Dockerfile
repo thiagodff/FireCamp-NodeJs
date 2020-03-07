@@ -10,8 +10,8 @@ RUN yarn
 
 COPY --chown=node:node . .
 
-EXPOSE 3333
-
 RUN ["chmod", "+x", "init.sh"]
+
+EXPOSE 3333
 
 CMD ["./init.sh"]

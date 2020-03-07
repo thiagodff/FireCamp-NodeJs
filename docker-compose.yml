@@ -12,6 +12,7 @@ services:
     depends_on:
       - firecamp-database
       - firecamp-redis
+    command: ['./init.sh']
     environment:
       - DB_HOST=firecamp-database
       - REDIS_HOST=firecamp-redis
