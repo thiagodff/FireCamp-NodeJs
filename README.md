@@ -34,6 +34,7 @@ This app features all the latest tools and practices development!
 - [Nodemon](https://nodemon.io/)
 - [Sucrase](https://github.com/alangpierce/sucrase)
 - [Docker](https://www.docker.com/docker-community)
+- [Docker Compose](https://docs.docker.com/compose)
 - [Sequelize](http://docs.sequelizejs.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Redis](https://redis.io/)
